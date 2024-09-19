@@ -1,0 +1,79 @@
+1. create database mydb;
+
+2.use mydb;
+
+3.create table cllg(id int, name varchar(20), stream varchar(20),marks int);
+
+4.
+insert into cllg values (1,'jatin','mca',100); 
+insert into cllg values (2,'vishal','mba',55); 
+insert into cllg values (3,'bipin','msc',45);
+ insert into cllg values (4,'shani','pharma',120);
+ insert into cllg values (5,'rahul','mbbs',147);
+ insert into cllg values (5,'rishi','btech',25);
+ insert into cllg values (6,'chayan','mca',78);
+ insert into cllg values (7,'myank','comp',150);
+ insert into cllg  values (8,'krishna','AI',60);
+
+
+5."update query"
+ update cllg
+ set name='ashish', stream='comp'
+ where id=5;
+
+6."delete query"
+delete from cllg where name='ashish';
+
+7."Select specific"
+select stream from cllg;
+
+8. "AND condition" ->>The AND operator displays a record if all the conditions separated by AND are TRUE
+select * from cllg where name='bipin' AND id=3;
+
+9. "OR condition" ->>The OR operator displays a record if any of the conditions separated by OR is TRUE.
+ select *from cllg where id=3 OR stream='pharma';
+
+10. "NOT condition" ->>The NOT operator displays a record if the condition(s) is NOT TRUE.
+ select *from cllg where not id=4;
+
+NOTE: we can use combination of  AND,OR ,NOT 
+
+11."Order condition"
+  select *from cllg
+  order by name ;
+
+12.  To sort in descending order
+  select *from cllg
+    order by name desc;
+
+13. "NULL operator" ->> The IS NULL operator is used to test for empty values (NULL values).
+  select name,id
+    -> from cllg
+    -> where stream is null;
+
+->> The IS NOT NULL operator is used to test for non-empty values (NOT NULL values).
+ select name,id
+    -> from cllg
+    -> where stream is not null;
+
+14. "SELECT TOP" ->>The SELECT TOP clause is used to specify the number of records to return.
+select *from cllg limit 2;
+
+15. The MIN() function returns the smallest value of the selected column.
+
+The MAX() function returns the largest value of the selected column.
+
+Command:-
+select MIN(marks) as Smallestmarks from cllg;
+select Max(marks) as Largestmarks from cllg;
+
+16.
+The COUNT() function returns the number of rows that matches a specified criterion
+Commad:  select COUNT(stream) FROM cllg;
+
+The AVG() function returns the average value of a numeric column. 
+Command:select AVG(marks) FROM cllg;
+
+The SUM() function returns the total sum of a numeric column. 
+Command:select SUM(marks) FROM cllg;
+
